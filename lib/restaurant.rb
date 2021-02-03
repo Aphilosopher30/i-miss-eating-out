@@ -60,6 +60,29 @@ class Restaurant
   end
 
 
+  def open_for_lunch?
+    opening = get_hour_from_time(self.opening_time)
+#    closing = get_hour_from_time(self.closing_time)
+
+    if opening.to_i <= 12 #&& closing.to_i > 12
+      serves_lunch = true
+    else
+      serves_lunch = false
+    end
+
+    return serves_lunch
+  end
+
+  def menu_dish_names
+    menue_yell = []
+    for dish in self.dishes
+      yell_dish = dish.upcase
+      menue_yell.append(yell_dish)
+    end
+
+    return menue_yell
+  end
+
 
 
 end
