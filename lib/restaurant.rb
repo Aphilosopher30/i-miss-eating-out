@@ -85,4 +85,25 @@ class Restaurant
 
 
 
+
+  def announce_closing_time(hours_open)
+    closing_time = self.closing_time(hours_open)
+    hour_closes = get_hour_from_time(closing_time)
+    hour_closes_int = hour_closes.to_i
+
+    if hour_closes_int > 12
+      hour_closes_int = hour_closes_int - 12
+    else
+      hour_closes_int = hour_closes_int
+    end
+
+    closing_hour = hour_closes_int.to_s
+    mn = get_mn_from_time(closing_time)
+
+    new_time = convert_time_to_string(closing_hour, mn)
+
+    return new_time
+
+  end
+
 end

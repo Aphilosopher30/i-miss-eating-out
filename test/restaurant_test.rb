@@ -73,8 +73,19 @@ class RestaurantTest < Minitest::Test
     assert_equal ['BURRATA', 'PIZZETTA', 'RAVIOLI'], restaurant.menu_dish_names
   end
 
+#iteration 4
+
+  def test_we_can_anounce_closing_time
+
+    restaurant1 = Restaurant.new('6:00', 'Fuel Cafe')
+    restaurant2 = Restaurant.new('16:00', 'Il Poggio')
+
+    assert_equal "11:00", restaurant1.announce_closing_time(5)
+    assert_equal "11:00", restaurant2.announce_closing_time(7)
 
 
+
+  end
 
 
 end
